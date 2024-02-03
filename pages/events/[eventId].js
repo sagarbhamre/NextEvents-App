@@ -11,7 +11,7 @@ function EventDetailPage(props) {
 
   if (!event) {
     return (
-      <div className="center">
+      <div className='center'>
         <p>Loading...</p>
       </div>
     );
@@ -53,7 +53,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: false
+    fallback: 'blocking'
   };
 }
 
