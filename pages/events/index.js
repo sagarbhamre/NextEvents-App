@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Head from 'next/head';
 import { useRouter } from "next/router";
 import EventList from "@/components/events/event-list";
 import { getAllEvents } from "@/helpers/api-util";
@@ -15,6 +16,10 @@ function AllEventsPage(props){
 
     return (
             <Fragment>
+                <Head>
+                    <title>NextJS Events</title>
+                    <meta name="description" content="Find a lot of great events that allow you to evolve..."/>
+                </Head>
                 <EventsSearch onSearch={findEventsHandler}/>
                 <EventList items={events}/>
             </Fragment>
@@ -28,7 +33,7 @@ export async function getStaticProps(){
         props:{
             events: events
         },
-        revalidate: 60
+        revalidate: 60 
     }
 
 }
